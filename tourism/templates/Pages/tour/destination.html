@@ -1,0 +1,76 @@
+{% extends 'Pages/layout.html' %}
+{% block title %}
+    Du lich
+{% endblock %}
+{% block contents %}
+    {% load static %}
+
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url({% static 'images/bg_1.jpg' %});">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+                <div class="col-md-9 ftco-animate pb-5 text-center">
+                    <h1 class="mb-0 bread">Danh sách Tour</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-no-pb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="search-wrap-1 ftco-animate">
+                        <form action="{% url 'search' %}" method="get" class="search-property-1">
+                            <div class="row g-0 text-center">
+                                <div class="col-sm-6 col-md-8 d-flex">
+                                    <div class="form-group p-4 border-0">
+                                        <label for="diemden">Điểm đến</label>
+                                        <div class="form-field">
+                                            <div class="icon"><span class="fa fa-search"></span></div>
+                                            <input type="text" id="diemden" name="diemden" class="form-control"
+                                                   placeholder="Tìm kiếm địa điểm">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 d-flex">
+                                    <div class="form-group d-flex w-100 border-0">
+                                        <div class="form-field w-100 align-items-center d-flex">
+                                            <input type="submit" value="Tìm kiếm"
+                                                   class="align-self-stretch form-control btn btn-primary">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row">
+                {% for x in destination %}
+                    <div class="col-md-4 ftco-animate">
+                        <div class="project-wrap">
+                            <a href="{% url 'dSingle' x.id %}" class="img"
+                               style="background-image: url({{ x.avatar.url }});">
+                                <span class="price">{{ x.price|floatformat:-1 }}tr VNĐ/Người</span>
+                            </a>
+                            <div class="text p-4">
+                                <span class="days">8 Ngày</span>
+                                <h3><a href="{% url 'dSingle' x.id %}" class="d-inline-block text-truncate w-100">{{ x.name }}</a></h3>
+                                <p class="location"><span class="fa fa-map-marker"></span>{{ x.tourCode }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}

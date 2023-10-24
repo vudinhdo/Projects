@@ -1,0 +1,217 @@
+{% extends 'Pages/layout.html' %}
+{% block title %}
+    Du lich
+{% endblock %}
+{% block contents %}
+    {% load static %}
+    <div class="hero-wrap js-fullheight" style="background-image: url('{% static 'images/bg_5.jpg' %}');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
+                <div class="col-md-7 ftco-animate">
+                    <p1 class="bg-text">
+                        <span class="subheading">Chào mừng đến với Du lịch Đó đây</span>
+                        <h1 class="mb-4">Khám phá địa điểm yêu thích của bạn với chúng tôi</h1>
+                        <p class="caps">Du lịch đến bất kỳ nơi đâu trên thế giới, mà không phải đi lòng vòng</p>
+                    </p1>
+                    <!-- <span class="subheading">Chào mừng đến với Du lịch Đó đây</span>
+                    <h1 class="mb-4">Khám phá địa điểm yêu thích của bạn với chúng tôi</h1>
+                    <p class="caps">Du lịch đến bất kỳ nơi đâu trên thế giới, mà không phải đi lòng vòng</p> -->
+                </div>
+                <a href="https://vimeo.com/347747035"
+                   class="icon-video popup-vimeo d-flex align-items-center justify-content-center mb-4">
+                    <span class="fa fa-play"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <section class="ftco-section services-section">
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-md-6 order-md-last heading-section pl-md-5 ftco-animate d-flex align-items-center">
+                    <div class="w-100">
+                        <span class="subheading">Chào mừng đến với Du lịch Đó đây</span>
+                        <h2 class="mb-4">Đã đến lúc bắt đầu cuộc hành trình của bạn</h2>
+                        <p>Biển Đà Nẵng, với vẻ đẹp hoang sơ và cuốn hút, luôn là điểm đến lý tưởng cho những người yêu
+                            thích du lịch biển. Vùng biển này nằm giữa những dãy núi đá vôi đổ bộ xuống biển, tạo nên
+                            khung cảnh hùng vĩ và độc đáo. Những bãi biển trải dài, với cát trắng mịn và nước biển trong
+                            xanh, thu hút du khách đến đây để thả mình trong làn nước biển mát lạnh.</p>
+                        <p>Không chỉ có cảnh đẹp tự nhiên, Đà Nẵng còn có nhiều điểm du lịch thú vị khác như Cầu Rồng
+                            lung linh về đêm, Bà Nà Hills với khí hậu mát mẻ và các công trình kiến trúc độc đáo, hay
+                            Khu du lịch Sơn Trà với ngọn núi cao và lớp rừng nhiệt đới nguyên sơ.</p>
+                        <p><a href="{% url 'destination' %}" class="btn btn-primary py-3 px-4">Tìm kiếm Điểm đến</a></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
+                            <div class="services services-1 color-1 d-block img"
+                                 style="background-image: url({% static 'images/services-1.jpg' %});">
+                                <div class="icon d-flex align-items-center justify-content-center"><span
+                                        class="flaticon-paragliding"></span></div>
+                                <div class="media-body">
+                                    <h3 class="heading mb-3">Những hoạt động</h3>
+                                    <p>tham quan, thưởng thức ẩm thực địa phương, thể thao, mua sắm và tận hưởng văn hóa
+                                        địa phương</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
+                            <div class="services services-1 color-2 d-block img"
+                                 style="background-image: url({% static 'images/services-2.jpg' %});">
+                                <div class="icon d-flex align-items-center justify-content-center"><span
+                                        class="flaticon-route"></span></div>
+                                <div class="media-body">
+                                    <h3 class="heading mb-3">Sắp xếp chuyến đi</h3>
+                                    <p>tổ chức và điều phối các địa điểm và tiện ích cho chương trình du lịch</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
+                            <div class="services services-1 color-3 d-block img"
+                                 style="background-image: url({% static 'images/services-3.jpg' %});">
+                                <div class="icon d-flex align-items-center justify-content-center"><span
+                                        class="flaticon-tour-guide"></span></div>
+                                <div class="media-body">
+                                    <h3 class="heading mb-3">Hướng dẫn viên tư nhân</h3>
+                                    <p>người bạn đồng hành tận tâm mang đến trải nghiệm du lịch cá nhân hóa và độc
+                                        đáo.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6 d-flex align-self-stretch ftco-animate">
+                            <div class="services services-1 color-4 d-block img"
+                                 style="background-image: url({% static 'images/services-4.jpg' %});">
+                                <div class="icon d-flex align-items-center justify-content-center"><span
+                                        class="flaticon-map"></span></div>
+                                <div class="media-body">
+                                    <h3 class="heading mb-3">Quản lý địa diểm du lịch</h3>
+                                    <p>là chuyên gia xác định và điều phối các địa điểm và vị trí trong các chương trình
+                                        du lịch</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section img ftco-select-destination" style="background-image: url({% static 'images/bg_3.jpg' %});">
+        <div class="container">
+            <div class="row justify-content-center pb-4">
+                <div class="col-md-12 heading-section text-center ftco-animate">
+                    <span class="subheading">Những địa điểm Đó Đây cung cấp</span>
+                    <h2 class="mb-4">Chọn điểm đến của bạn</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container container-2">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="carousel-destination owl-carousel ftco-animate">
+                        <div class="item">
+                            <div class="project-destination">
+                                <a href="#" class="img" style="background-image: url({% static 'images/place-1.jpg' %});">
+                                    <div class="text">
+                                        <h3>Philippines</h3>
+                                        <span>8 Tours</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="project-destination">
+                                <a href="#" class="img" style="background-image: url({% static 'images/place-2.jpg' %});">
+                                    <div class="text">
+                                        <h3>Canada</h3>
+                                        <span>2 Tours</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="project-destination">
+                                <a href="#" class="img" style="background-image: url({% static 'images/place-3.jpg' %});">
+                                    <div class="text">
+                                        <h3>Thailand</h3>
+                                        <span>5 Tours</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="project-destination">
+                                <a href="#" class="img" style="background-image: url({% static 'images/place-4.jpg' %});">
+                                    <div class="text">
+                                        <h3>Autralia</h3>
+                                        <span>5 Tours</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="project-destination">
+                                <a href="#" class="img" style="background-image: url({% static 'images/place-5.jpg' %});">
+                                    <div class="text">
+                                        <h3>Greece</h3>
+                                        <span>7 Tours</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="ftco-section ftco-about img" style="background-image: url({% static 'images/bg_4.jpg' %});">
+        <div class="overlay"></div>
+        <div class="container py-md-5">
+            <div class="row py-md-5">
+                <div class="col-md d-flex align-items-center justify-content-center">
+                    <a href="https://vimeo.com/227525492"
+                       class="icon-video popup-vimeo d-flex align-items-center justify-content-center mb-4">
+                        <span class="fa fa-play"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-about ftco-no-pt img">
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-md-12 about-intro">
+                    <div class="row">
+                        <div class="col-md-6 d-flex align-items-stretch">
+                            <div class="img d-flex w-100 align-items-center justify-content-center"
+                                 style="background-image:url({% static 'images/about-1.jpg' %});">
+                            </div>
+                        </div>
+                        <div class="col-md-6 pl-md-5 py-5">
+                            <div class="row justify-content-start pb-3">
+                                <div class="col-md-12 heading-section ftco-animate">
+                                    <span class="subheading">Về chúng tôi</span>
+                                    <h2 class="mb-4">Làm cho chuyến đi của bạn trở lên đáng nhớ và an toàn cùng chúng
+                                        tôi</h2>
+                                    <p>Đây là nơi bạn có thể khám phá tâm hồn và đam mê của đội ngũ chúng tôi, cũng như
+                                        cam kết của chúng tôi về việc mang đến cho du khách những chuyến đi đặc
+                                        biệt.</p>
+{#                                    <p><a href="#" class="btn btn-primary">Đặt Tour của bạn</a></p>#}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

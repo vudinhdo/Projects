@@ -1,0 +1,69 @@
+{% extends 'Pages/layout.html' %}
+{% block title %}
+    Du lich
+{% endblock %}
+{% block contents %}
+    {% load static %}
+
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url({% static 'images/bg_1.jpg' %});">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+                <div class="col-md-9 ftco-animate pb-5 text-center">
+                    <h1 class="mb-0 bread">Lộ trình</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-no-pt ftco-no-pb">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8  ftco-animate py-md-5 mt-md-5">
+                    <h2 class="mb-3">{{ dSingle.name }}</h2>
+                    <p>{{ dSingle.tourCode }}</p>
+                    <p>
+                        <img src="{{ dSingle.avatar.url }}" alt="" class="img-fluid">
+                    </p>
+                    <p>
+                        <img src="{{ dSingle.firstImage.url }}" alt="" class="img-fluid">
+                    </p>
+                    <p>
+                        <img src="{{ dSingle.secondImage.url }}" alt="" class="img-fluid">
+                    </p>
+                    <p>
+                        <img src="{{ dSingle.thirdImage.url }}" alt="" class="img-fluid">
+                    </p>
+                </div>
+                <div class="col-lg-4 sidebar ftco-animate bg-light py-md-5">
+                    <div class="sidebar-box pt-md-5">
+                        <h1>Xách balo và đi </h1>
+                    </div>
+                    <div class="sidebar-box ftco-animate">
+                        <div class="categories">
+                            <h2>Giá</h2>
+                            <h3>{{ dSingle.price|floatformat:-1 }}tr VNĐ/Người</h3>
+                            {% if not request.user.is_authenticated %}
+                                <h4>Nút đăng nhập <a href="{% url "login_view" %}">ở đây</a> ,hãy đăng nhập để đặt tour
+                                </h4>
+                            {% else %}
+
+                                <form action="{% url 'bookTour' user.id dSingle.id %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="submit" class="btn btn-primary submit" value="Đặt Tour">
+                                </form>
+                            {% endif %}
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+{% endblock %}

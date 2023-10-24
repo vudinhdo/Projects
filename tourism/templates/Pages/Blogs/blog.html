@@ -1,0 +1,87 @@
+{% extends 'Pages/layout.html' %}
+{% block title %}
+    Du lich
+{% endblock %}
+{% block contents %}
+    {% load static %}
+
+    <section class="hero-wrap hero-wrap-2 js-fullheight"
+             style="background-image: url('{% static 'images/bg_1.jpg' %}');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+                <div class="col-md-9 ftco-animate pb-5 text-center">
+                    <h1 class="mb-0 bread">Bài viết</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-no-pb">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="search-wrap-1 ftco-animate">
+                        <form action="{% url 'search_blog' %}" method="get" class="search-property-1">
+                            <div class="row g-0 text-center">
+                                <div class="col-sm-6 col-md-8 d-flex">
+                                    <div class="form-group p-4 border-0">
+                                        <label for="baiviet">Bài viết</label>
+                                        <div class="form-field">
+                                            <div class="icon"><span class="fa fa-search"></span></div>
+                                            <input type="text" id="baiviet" name="baiviet" class="form-control"
+                                                   placeholder="Tìm kiếm bài viết">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 d-flex">
+                                    <div class="form-group d-flex w-100 border-0">
+                                        <div class="form-field w-100 align-items-center d-flex">
+                                            <input type="submit" value="Tìm kiếm"
+                                                   class="align-self-stretch form-control btn btn-primary">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row d-flex">
+                {% for x in tus %}
+                    <div class="col-md-4 d-flex ftco-animate">
+                        <div class="blog-entry justify-content-end">
+                            <a href="{% url "blog_single" x.id %}" class="block-20"
+                               style="background-image: url({{ x.avatar.url }});">
+                            </a>
+                            <div class="text">
+                                <div class="d-flex align-items-center mb-4 topp">
+                                    <div class="one">
+                                        <span class="day">{{ x.create_at.day }}</span>
+                                    </div>
+                                    <div class="two">
+                                        <span class="yr">{{ x.create_at.year }}</span>
+                                        <span class="mos">{{ x.create_at.month }}</span>
+                                    </div>
+                                </div>
+                                <h3 class="heading"><a href="#"
+                                                       style="overflow: hidden;text-overflow: ellipsis;line-height: 25px;-webkit-line-clamp: 3;height: 75px;display: -webkit-box;-webkit-box-orient: vertical;">{{ x.name }}</a>
+                                </h3>
+                                <p style="overflow: hidden;text-overflow: ellipsis;line-height: 25px;-webkit-line-clamp: 3;height: 75px;display: -webkit-box;-webkit-box-orient: vertical;">{{ x.description }}</p>
+                                <p><a href="{% url "blog_single" x.id %}" class="btn btn-primary">Xen thêm</a></p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock %}

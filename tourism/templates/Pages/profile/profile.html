@@ -1,0 +1,62 @@
+{% extends 'Pages/layout.html' %}
+{% block title %}
+    Profile
+{% endblock %}
+{% block contents %}
+    {% load static %}
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url({% static 'images/bg_1.jpg' %});">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+                <div class="col-md-9 ftco-animate pb-5 text-center">
+                    <h1 class="mb-0 bread">Profile</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-section ftco-no-pt ftco-no-pb ">
+        <div class="overlay"></div>
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-lg-6 mb-4 mb-lg-0">
+                    <div class="card mb-3" style="border-radius: .5rem;">
+                        <div class="row g-0">
+                            <div class="col-md-4 gradient-custom text-center text-white"
+                            >
+                                <img src="{% static "images/profiles/avatar.jpg" %}"
+                                     alt="Avatar" class="img-fluid my-5"
+                                     style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;width: 150px;height: auto"/>
+                                <h5>Tên tài khoản: {{ user.username }}</h5>
+                                <a href="{% url 'get_edit_username' user.id %}">chỉnh sửa</a>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-4">
+                                    <h6>Thông tin
+                                    </h6>
+                                    <hr class="mt-0 mb-4">
+                                    <div class=" pt-1">
+                                        <div class=" mb-3">
+                                            <h6>Email</h6>
+                                            <p class="text-muted">{{ user.email }}</p>
+                                            <a href="{% url 'get_edit_email' user.id %}" class="border-0 bg-white">chỉnh sửa email</a>
+                                        </div>
+                                    </div>
+                                    <hr class="mt-0 mb-4">
+                                    <div class="row pt-1">
+                                        <div class="col-6 mb-3">
+                                            <a href="{% url "logout" %}">Đăng xuất</a>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <a href="{% url 'get_edit_password' user.id %}">Chỉnh sửa mật khẩu</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
